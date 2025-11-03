@@ -24,7 +24,7 @@
         width: 250px;
         margin-right: 30px;
         text-align: center;
-        background-color: #f0f0f0; /* 左側淺灰色背景 */
+        background-color: #f0f0f0;
         padding: 20px;
         border-radius: 8px;
     }
@@ -84,6 +84,8 @@
         color: white;
         font-size: 12px;
         line-height: 18px;
+        width: 0; /* 初始寬度 0% */
+        transition: width 1s ease-out;
     }
     .download-btn {
         display:inline-block;
@@ -93,23 +95,27 @@
         text-decoration:none;
         border-radius:5px;
         margin-top:10px;
+        transition: background-color 0.3s ease;
+    }
+    .download-btn:hover {
+        background-color:#0056b3;
+    }
+    .download-btn:active {
+        background-color:#0069d9;
     }
 </style>
 </head>
+
 <body>
 <div class="container">
     <div class="left-column">
-        <div class="headshot">
-            <!-- 上傳頭貼後可用 <img src="headshot.jpg" alt="Teddy頭貼" style="width:180px; height:180px; border-radius:50%;"> 替換 -->
-            頭貼區
-        </div>
+        <div class="headshot">頭貼區</div>
 
         <div class="section">
             <h2>個人資料</h2>
             <ul>
                 <li>Teddy</li>
                 <li>求職目標：PLC / 自動控制工程師</li>
-                <li>電話 / Email</li>
             </ul>
         </div>
 
@@ -117,18 +123,18 @@
             <h2>語言 & 打字</h2>
             <ul>
                 <li>中文：母語</li>
-                <li>英文：一般工作溝通</li>
+                <li>英文：一般文件閱讀</li>
             </ul>
             <div class="skill">
                 <div class="skill-name">中文打字 30 WPM</div>
                 <div class="progress-container">
-                    <div class="progress-bar" style="width:70%">70%</div>
+                    <div class="progress-bar" data-target="70">0%</div>
                 </div>
             </div>
             <div class="skill">
                 <div class="skill-name">英文打字 50 WPM</div>
                 <div class="progress-container">
-                    <div class="progress-bar" style="width:50%">50%</div>
+                    <div class="progress-bar" data-target="50">0%</div>
                 </div>
             </div>
         </div>
@@ -136,15 +142,21 @@
         <div class="section">
             <h2>技能</h2>
             <div class="skill">
-                <div class="skill-name">Python / 程式語言</div>
+                <div class="skill-name">硬體能力 / 電路圖閱讀</div>
                 <div class="progress-container">
-                    <div class="progress-bar" style="width:60%">60%</div>
+                    <div class="progress-bar" data-target="80">0%</div>
                 </div>
             </div>
             <div class="skill">
-                <div class="skill-name">硬體能力 / 電路圖閱讀</div>
+                <div class="skill-name">Python / 程式語言</div>
                 <div class="progress-container">
-                    <div class="progress-bar" style="width:80%">80%</div>
+                    <div class="progress-bar" data-target="60">0%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">階梯圖 / PLC 程式設計</div>
+                <div class="progress-container">
+                    <div class="progress-bar" data-target="40">0%</div>
                 </div>
             </div>
         </div>
@@ -152,7 +164,8 @@
         <div class="section">
             <h2>證照</h2>
             <ul>
-                <li>電腦硬體裝修乙丙級</li>
+                <li>電腦硬體裝修乙級</li>
+                <li>電腦硬體裝修丙級</li>
                 <li>數位電子乙級</li>
                 <li>工業電子丙級</li>
                 <li>套裝軟體應用 TIPCI</li>
@@ -164,9 +177,9 @@
         <div class="section">
             <h2>專業摘要</h2>
             <ul>
-                <li>擁有 2~3 年 IT / 硬體維護與系統實習經驗，熟悉電腦硬體裝修與電子電路排錯。</li>
+                <li>擁有 2~3 年 IT / 硬體維護與系統實習經驗。</li>
                 <li>熟悉控制系統理論（PID 控制）並具備專題實作經驗。</li>
-                <li>擅長將專業知識以簡單方式解釋給一般使用者，具良好溝通能力。</li>
+                <li>擅長將專業知識以簡單方式解釋給一般使用者。</li>
             </ul>
         </div>
 
@@ -174,7 +187,7 @@
             <h2>學歷</h2>
             <ul>
                 <li>中科大 資訊工程系（夜間在讀）</li>
-                <li>學期成績長期保持前 5%</li>
+                <li>學期成績長期保持前 10%</li>
                 <li>專題：PID 控制系統設計與模擬</li>
             </ul>
         </div>
@@ -184,9 +197,9 @@
             <ul>
                 <li><strong>控制系統專題 – PID 控制設計：</strong>
                     <ul class="subsection">
-                        <li>設計並實作 PID 控制迴路，進行電路測試與調整</li>
-                        <li>繪製電路圖並完成控制系統模擬</li>
-                        <li>將控制概念與操作流程以簡單方式呈現給非專業使用者</li>
+                        <li>設計並實作 PID 控制迴路，進行電路測試與調整。</li>
+                        <li>繪製電路圖並完成控制系統模擬。</li>
+                        <li>將控制概念以簡單方式呈現給非專業使用者。</li>
                     </ul>
                 </li>
             </ul>
@@ -195,33 +208,22 @@
         <div class="section">
             <h2>實習 / 工作經驗</h2>
             <ul>
-                <li><strong>學校商學院 – 電腦維護工讀生 | 2 年：</strong>
+                <li><strong>學校商學院 – 電腦維護工讀生 | 4 個月：</strong>
                     <ul class="subsection">
-                        <li>負責電腦硬體維護與排故</li>
-                        <li>協助學生與教職員解決電腦與網路問題</li>
+                        <li>負責電腦硬體維護與排故。</li>
+                        <li>協助學生與教職員解決電腦與網路問題。</li>
                     </ul>
                 </li>
-                <li><strong>實習硬體工程師 | 18 個月：</strong>
+                <li><strong>實習硬體工程師 |約 18 個月：</strong>
                     <ul class="subsection">
-                        <li>電子設備檢測與排錯</li>
-                        <li>電路圖閱讀與硬體裝修工作</li>
+                        <li>電子設備檢測與排錯。</li>
+                        <li>電路圖閱讀與硬體裝修工作。</li>
                     </ul>
                 </li>
                 <li><strong>實習 Infra 工程師 | 3 個月：</strong>
                     <ul class="subsection">
-                        <li>系統架構維護與故障排除</li>
-                        <li>支援部門日常 IT 基礎設施工作</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>其他經歷</h2>
-            <ul>
-                <li>技藝競賽選手選拔（電子科相關）
-                    <ul class="subsection">
-                        <li>強化電路圖閱讀、電子模擬與故障排除能力</li>
+                        <li>系統架構維護與故障排除。</li>
+                        <li>支援部門日常 IT 基礎設施工作。</li>
                     </ul>
                 </li>
             </ul>
@@ -230,19 +232,43 @@
         <div class="section">
             <h2>PLC / 控制技能</h2>
             <ul>
-                <li>基礎認識 PLC 控制系統，曾於專題中應用 PID 控制概念</li>
-                <li>硬體能力 / 電路圖排故能力強</li>
+                <li>基礎認識 PLC 控制系統，曾於專題中應用 PID 控制概念。</li>
+                <li>硬體能力 / 電路圖排故能力強。</li>
             </ul>
         </div>
 
-        <!-- 新增下載 PDF 履歷按鈕 -->
         <div class="section">
             <h2>下載履歷</h2>
-            <a href="Teddy_Resume.pdf" download class="download-btn">
+            <a href="Teddy_Resume.pdf" download class="download-btn" id="downloadBtn">
                 下載 PDF 履歷
             </a>
         </div>
     </div>
 </div>
+
+<!-- ✅ JavaScript 效果 -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    const bars = document.querySelectorAll(".progress-bar");
+    bars.forEach(bar => {
+        const target = parseInt(bar.dataset.target);
+        let width = 0;
+        const interval = setInterval(() => {
+            if (width >= target) clearInterval(interval);
+            else {
+                width++;
+                bar.style.width = width + "%";
+                bar.textContent = width + "%";
+            }
+        }, 15); // 每15毫秒漲1%
+    });
+});
+
+document.getElementById("downloadBtn").addEventListener("click", function() {
+    this.style.backgroundColor = "#8000ff"; // 紫色
+});
+</script>
+
 </body>
 </html>
