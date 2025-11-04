@@ -109,21 +109,22 @@
 <body>
 <div class="container">
     <div class="left-column">
-        <div class="headshot">頭貼區</div>
+        <img src="Headshot.jpeg" alt="Teddy頭貼" style="width:180px; height:180px; border-radius:50%;">
 
         <div class="section">
             <h2>個人資料</h2>
             <ul>
-                <li>Teddy</li>
-                <li>求職目標：PLC / 自動控制工程師</li>
+                <li>姓名：黃泓翔 Teddy</li>
+                <li>生日：2004/07/19(未役)</li>
+                <li>Email:s2411232056@nutc.edu.tw</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>語言 & 打字</h2>
+            <h2>語言</h2>
             <ul>
                 <li>中文：母語</li>
-                <li>英文：一般文件閱讀</li>
+                <li>英文：普通文件閱讀</li>
             </ul>
             <div class="skill">
                 <div class="skill-name">中文打字 30 WPM</div>
@@ -166,9 +167,9 @@
             <ul>
                 <li>電腦硬體裝修乙級</li>
                 <li>電腦硬體裝修丙級</li>
+                <li>套裝軟體應用 TIPCI</li>
                 <li>數位電子乙級</li>
                 <li>工業電子丙級</li>
-                <li>套裝軟體應用 TIPCI</li>
             </ul>
         </div>
     </div>
@@ -186,16 +187,16 @@
         <div class="section">
             <h2>學歷</h2>
             <ul>
-                <li>中科大 資訊工程系（夜間在讀）</li>
+                <li>國立台中科大 資訊工程系（夜間在讀）</li>
                 <li>學期成績長期保持前 10%</li>
-                <li>專題：PID 控制系統設計與模擬</li>
+                <li>專題：PID 自平衡控制系統</li>
             </ul>
         </div>
 
         <div class="section">
             <h2>專題 / 專案經驗</h2>
             <ul>
-                <li><strong>控制系統專題 – PID 控制設計：</strong>
+                <li><strong>控制系統專題 – PID 自平衡系統：</strong>
                     <ul class="subsection">
                         <li>設計並實作 PID 控制迴路，進行電路測試與調整。</li>
                         <li>繪製電路圖並完成控制系統模擬。</li>
@@ -211,10 +212,10 @@
                 <li><strong>學校商學院 – 電腦維護工讀生 | 4 個月：</strong>
                     <ul class="subsection">
                         <li>負責電腦硬體維護與排故。</li>
-                        <li>協助學生與教職員解決電腦與網路問題。</li>
+                        <li>協助學生與教職員解決軟硬體相關問題。</li>
                     </ul>
                 </li>
-                <li><strong>實習硬體工程師 |約 18 個月：</strong>
+                <li><strong>實習硬體工程師 | 約 18 個月：</strong>
                     <ul class="subsection">
                         <li>電子設備檢測與排錯。</li>
                         <li>電路圖閱讀與硬體裝修工作。</li>
@@ -248,7 +249,7 @@
 
 <!-- ✅ JavaScript 效果 -->
 <script>
-
+// 1️⃣ 技能條動畫
 document.addEventListener("DOMContentLoaded", function() {
     const bars = document.querySelectorAll(".progress-bar");
     bars.forEach(bar => {
@@ -265,6 +266,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// 2️⃣ 按鈕點擊變紫
 document.getElementById("downloadBtn").addEventListener("click", function() {
     this.style.backgroundColor = "#8000ff"; // 紫色
 });
